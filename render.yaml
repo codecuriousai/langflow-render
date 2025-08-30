@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: langflow-instance
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: LANGFLOW_HOST
+        value: 0.0.0.0
+      - key: LANGFLOW_PORT
+        value: 7860
+      - key: LANGFLOW_AUTO_LOGIN
+        value: true
+      - key: LANGFLOW_SUPERUSER
+        value: admin
+      - key: LANGFLOW_SUPERUSER_PASSWORD
+        value: admin123
+    healthCheckPath: /health

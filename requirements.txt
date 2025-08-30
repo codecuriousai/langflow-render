@@ -1,0 +1,4 @@
+langflow==1.0.12
+uvicorn
+fastapi
+python-multipart
