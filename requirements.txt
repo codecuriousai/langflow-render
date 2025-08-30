@@ -1,4 +1,6 @@
-langflow==1.0.12
-uvicorn
-fastapi
-python-multipart
+# Specific versions to avoid dependency conflicts
+langflow==1.0.5
+uvicorn[standard]==0.24.0
+fastapi==0.104.1
+python-multipart==0.0.6
+httpx==0.25.2

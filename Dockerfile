@@ -9,8 +9,12 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Langflow
-RUN pip install langflow
+# Install Langflow with optimizations
+RUN pip install --no-cache-dir --timeout=1000 \
+    --retries=5 --trusted-host pypi.org \
+    --trusted-host pypi.python.org \
+    --trusted-host files.pythonhosted.org \
+    langflow
 
 # Create necessary directories
 RUN mkdir -p /app/flows
